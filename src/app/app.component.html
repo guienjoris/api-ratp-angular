@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<div class=intersection></div>
+<label for="choix_ligne">Station de départ: </label>
+<select name="choix_ligne" id="choix_ligne" (focus)="getLines()" >
+  <option value="">Choisissez votre ligne</option>
+  <option *ngFor="let lignes of lignes" (click)="getStations($event.target.value)" >{{lignes.name}}</option>
+</select>
+<select name="choix_stations" id="choix_stations">
+  <option value="">Choisissez votre station</option>
+  <option *ngFor="let stations of stations" (click)="getHoraires($event.target.value)" >{{stations.name}}</option>
+</select>
+<div class="container_horaires">
+<div class="allerhoraire">
+  <p>Direction: {{directionAller}}</p>
+<p *ngFor="let horairealler of horaireAller">{{horairealler.message}}</p>
+</div>
+<div class="retourhoraire">
+  <p>Direction: {{directionRetour}}</p>
+
+<p *ngFor="let horaireretour of horaireRetour">{{horaireretour.message}}</p>
+</div>
+</div>
+
+
+
+<router-outlet></router-outlet>
