@@ -1,4 +1,19 @@
-<h1>{{title}}</h1>
+
+<div class="background">
+    <h1>{{title}}</h1>
+
+  <h2>Mairie de montrouge</h2>
+<div class="container_horaires_default">
+  <div class="allerhoraire">
+    <p>Direction: {{directionAllerDefault}}</p>
+  <p *ngFor="let horaireallerdefault of horaireAllerDefault" class="time">{{horaireallerdefault.message}}</p>
+  </div>
+  <div class="retourhoraire">
+    <p>Direction: {{directionRetourDefault}}</p>
+  
+  <p *ngFor="let horaireretourdefault of horaireRetourDefault" class="time">{{horaireretourdefault.message}}</p>
+  </div>
+  </div>
 <div class=intersection></div>
 <label for="choix_ligne">Station de départ: </label>
 <select name="choix_ligne" id="choix_ligne" (focus)="getLines()" >
@@ -12,15 +27,18 @@
 <div class="container_horaires">
 <div class="allerhoraire">
   <p>Direction: {{directionAller}}</p>
-<p *ngFor="let horairealler of horaireAller">{{horairealler.message}}</p>
+<p *ngFor="let horairealler of horaireAller" class="time">{{horairealler.message}}</p>
 </div>
 <div class="retourhoraire">
   <p>Direction: {{directionRetour}}</p>
 
-<p *ngFor="let horaireretour of horaireRetour">{{horaireretour.message}}</p>
-</div>
+<p *ngFor="let horaireretour of horaireRetour" class="time">{{horaireretour.message}}</p>
 </div>
 
+</div>
+
+</div>
+<video src="assets/Tube.mp4" autoplay loop mute></video>
 
 
 <router-outlet></router-outlet>

@@ -7,7 +7,14 @@ import {HttpClient } from '@angular/common/http'
 })
 export class RatplignesService {
 
-  constructor(private HttpClient: HttpClient) {}
+  constructor(private HttpClient: HttpClient) {
+  }
+  getHorairesAllerDefault(){
+    return this.HttpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/schedules/metros/4/mairie+de+montrouge/A`)
+  }
+  getHorairesRetourDefault(){
+    return this.HttpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/schedules/metros/4/mairie+de+montrouge/R`)
+  } 
   getLines(){
     return this.HttpClient.get('https://api-ratp.pierre-grimaud.fr/v4/lines/metros');
   }
