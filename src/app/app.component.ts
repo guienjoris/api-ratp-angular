@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
       this.resultat = data;
       this.horaireAllerDefault = this.resultat.result.schedules;
       this.directionAllerDefault=this.resultat.result.schedules[0].destination; 
+
     })
   }
   getHorairesRetourDefault(){

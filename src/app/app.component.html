@@ -6,19 +6,19 @@
 <div class="container_horaires_default">
   <div class="allerhoraire">
     <p>Direction: {{directionAllerDefault}}</p>
-  <p *ngFor="let horaireallerdefault of horaireAllerDefault" class="time">{{horaireallerdefault.message}}</p>
+  <p *ngFor="let horaireallerdefault of horaireAllerDefault" [ngClass]="{'blink': horaireallerdefault.message === 'Train a l\'approche','time': horaireallerdefault.message != 'Train a l\'approche' }" >{{horaireallerdefault.message}}</p>
   </div>
   <div class="retourhoraire">
     <p>Direction: {{directionRetourDefault}}</p>
   
-  <p *ngFor="let horaireretourdefault of horaireRetourDefault" class="time">{{horaireretourdefault.message}}</p>
+  <p *ngFor="let horaireretourdefault of horaireRetourDefault" [ngClass]="{'blink': horaireretourdefault.message === 'Train a l\'approche' ,'time': horaireretourdefault.message != 'Train a l\'approche' }">{{horaireretourdefault.message}}</p>
   </div>
   </div>
 <div class=intersection></div>
 <label for="choix_ligne">Station de départ: </label>
 <select name="choix_ligne" id="choix_ligne" (focus)="getLines()" >
   <option value="">Choisissez votre ligne</option>
-  <option *ngFor="let lignes of lignes" (click)="getStations($event.target.value)" >{{lignes.name}}</option>
+  <option *ngFor="let lignes of lignes" (click)="getStations($event.target.value)"  >{{lignes.name}}</option>
 </select>
 <select name="choix_stations" id="choix_stations">
   <option value="">Choisissez votre station</option>
@@ -27,18 +27,17 @@
 <div class="container_horaires">
 <div class="allerhoraire">
   <p>Direction: {{directionAller}}</p>
-<p *ngFor="let horairealler of horaireAller" class="time">{{horairealler.message}}</p>
+<p *ngFor="let horairealler of horaireAller" [ngClass]="{'blink': horairealler.message === 'Train a l\'approche','time': horairealler.message != 'Train a l\'approche' }"  id="time">{{horairealler.message}}</p>
 </div>
 <div class="retourhoraire">
   <p>Direction: {{directionRetour}}</p>
 
-<p *ngFor="let horaireretour of horaireRetour" class="time">{{horaireretour.message}}</p>
+<p *ngFor="let horaireretour of horaireRetour" [ngClass]="{'blink': horaireretour.message === 'Train a l\'approche','time': horaireretour.message != 'Train a l\'approche' }" >{{horaireretour.message}}</p>
 </div>
 
 </div>
 
 </div>
-<video src="assets/Tube.mp4" autoplay loop mute></video>
 
 
 <router-outlet></router-outlet>

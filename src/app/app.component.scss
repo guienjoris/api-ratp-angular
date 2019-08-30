@@ -1,13 +1,33 @@
-@font-face{
-    font-family:'Subway';
-    src: url('/fonts/lcddot/lcddot_tr.ttf') format('ttf');
-}
-.time p{
-    font-family: 'Subway' sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
+*{
+    font-family: 'Gruppo', cursive;
+    font-size: 22px;
 }
 h1{
     color:white;
-    font-family: 'Subway' sans-serif;
+}
+.time{
+    background-color: rgb(196, 98, 0);
+    border: 1px solid black;
+    color:white;
+}
+.blink{
+    background-color: rgb(196, 98, 0);
+    border: 1px solid black;
+
+    animation-name:blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;  
+}
+@keyframes blink{
+    from{
+        color:rgb(196, 98, 0)
+
+    }
+    to{
+        color:white;
+
+    }
 }
 .container_horaires{
     display:flex;
@@ -23,10 +43,10 @@ video{
     position:absolute;
     z-index:100;
     background-color: rgba(255,255,255,0.7);
-    padding:5%;
+    padding:1%;
     width:70%;
     margin-left:50%;
-    transform: translate(-50%,20%);
+    transform: translate(-50%);
     border-radius:10px;
     box-shadow: 1px 1px 1px black;
 }
